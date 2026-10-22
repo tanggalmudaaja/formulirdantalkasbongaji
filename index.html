@@ -98,13 +98,13 @@
         }
         .hidden-view { display: none !important; }
         
-        /* Custom scrollbar setup to prevent layout bouncing */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
+        /* Stable scrollbars configuration */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        * { scrollbar-width: thin; scrollbar-color: #3b82f6 #f1f5f9; box-sizing: border-box; }
+        * { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; box-sizing: border-box; }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-blue-500 selection:text-white flex flex-col justify-between h-screen overflow-hidden">
@@ -130,7 +130,6 @@
         <div class="w-full max-w-full px-4 sm:px-8 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="backToSplash()">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ0tuAPBwjNxYCCMYVRGId0IgWZaH26Y_UVfqi3t2EmrwOU5jkBxfNBHuBPAXRAEizTMmEEco4beAUBI_CPHZWq5h-wZ-CrpEcEVJjE6J29K4GIyA-CJv4QKvz68HB4MEitCxR9ktTmjtxTeJtn86hgWr2t-i-HIAsLgjL_k35Kv195lEX5QWSMLG1Rcw/s546/Logo4.png" alt="Logo" class="h-12 sm:h-16 object-contain">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ0tuAPBwjNxYCCMYVRGId0IgWZaH26Y_UVfqi3t2EmrwOU5jkBxfNBHuBPAXRAEizTMmEEco4beAUBI_CPHZWq5h-wZ-CrpEcEVJjE6J29K4GIyA-CJv4QKvz68HB4MEitCxR9ktTmjtxTeJtn86hgWr2t-i-HIAsLgjL_k35Kv195lEX5QWSMLG1Rcw/s546/Logo4.png" alt="Logo" class="hidden">
             </div>
 
             <div class="flex items-center space-x-1 sm:space-x-4 text-xs sm:text-sm font-medium">
@@ -196,7 +195,7 @@
                      class="w-full h-full object-contain block m-0 p-0 border-0 bg-white">
             </div>
 
-            <div class="w-full md:w-3/12 h-full shrink-0 bg-white px-3 py-3 flex flex-col items-center justify-between shadow-sm z-10 border-l border-slate-200 overflow-y-auto overflow-x-hidden">
+            <div class="w-full md:w-3/12 h-full shrink-0 bg-white px-3 py-3 flex flex-col items-center justify-between shadow-sm z-10 border-l border-slate-200 overflow-hidden">
                 <div class="w-full space-y-3 pt-1 text-left">
                     <h3 class="font-extrabold font-heading text-slate-900 text-xs sm:text-sm tracking-tight border-b pb-1 flex items-center gap-1.5">
                         <i class="fa-solid fa-circle-question text-blue-600"></i> Apakah Itu?
@@ -221,7 +220,7 @@
                     </div>
                 </div>
 
-                <div class="w-full flex-1 flex items-center justify-center gap-2 my-2 min-h-0 overflow-hidden">
+                <div class="w-full flex-1 flex items-center justify-center gap-2 my-1 min-h-0 overflow-hidden">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYa1fmqPBt3DBlld0YhprLfHxKpDQuEZQeirHfIwXQLm_6078hjex5eYSdwlhzTDfbim1rPsdGCRcqiFc0CS-yHmGRvPuSIAqslwAjSqbEiyq-hty40CcaHhCuFs2zYOGGYtZpQ6BnoXPdiTbCumGGMf2xlULFYz6tOfDh86TQPTstnuGTxAB-Wx0ehFc/s1600/Digital_Loan_Access_Flow_Infographic-removebg-preview.png" 
                          alt="Digital Loan Access Flow Infographic" 
                          class="max-w-[46%] max-h-full w-auto h-auto object-contain block drop-shadow-md">
@@ -265,17 +264,17 @@
                     
                     <div id="headerInputsContainer" class="flex flex-col gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
-                            <div class="md:col-span-8 lg:col-span-9">
+                            <div class="md:col-span-8 lg:col-span-9 w-full">
                                 <label id="labelNomorPengajuan" class="block text-xs font-bold text-slate-700 mb-1">Nomor Pengajuan</label>
                                 <textarea id="nomor" required rows="1" oninput="autoResizeTextarea(this)" placeholder="Isi dengan No Surat Koperasi" class="w-full px-3.5 py-2.5 rounded-xl custom-input text-xs"></textarea>
                             </div>
-                            <div class="md:col-span-4 lg:col-span-3">
+                            <div class="md:col-span-4 lg:col-span-3 w-full">
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Pengajuan</label>
                                 <input type="date" id="tanggal" required class="w-full px-3 py-2.5 rounded-xl custom-input text-xs">
                             </div>
                         </div>
 
-                        <div>
+                        <div class="w-full">
                             <label class="block text-xs font-bold text-slate-700 mb-1">Pilih Mitra (Koperasi/Perusahaan)</label>
                             <select id="selectMitra" required class="w-full px-3.5 py-2.5 rounded-xl custom-input text-xs font-bold text-slate-800 bg-white">
                                 <option value="">-- Memuat Data Mitra dari Sheet --</option>
@@ -296,11 +295,11 @@
                                     <thead class="bg-emerald-600 text-white font-bold uppercase tracking-wider text-[11px]">
                                         <tr>
                                             <th class="px-3 py-3 text-center w-12 border-r border-emerald-500">#</th>
-                                            <th class="px-4 py-3 text-left border-r border-emerald-500">Nama Lengkap Anggota / Karyawan</th>
-                                            <th class="px-4 py-3 text-left w-44 border-r border-emerald-500">No. Anggota / ID</th>
-                                            <th class="px-4 py-3 text-left w-60 border-r border-emerald-500">NIK (KTP)</th>
-                                            <th class="px-4 py-3 text-right w-48 border-r border-emerald-500">Nominal Pokok (Rp)</th>
-                                            <th class="px-3 py-3 text-center w-28">Aksi</th>
+                                            <th class="px-4 py-3 text-left border-r border-emerald-500 min-w-[200px]">Nama Lengkap Anggota / Karyawan</th>
+                                            <th class="px-4 py-3 text-left w-44 border-r border-emerald-500 min-w-[140px]">No. Anggota / ID</th>
+                                            <th class="px-4 py-3 text-left w-60 border-r border-emerald-500 min-w-[180px]">NIK (KTP)</th>
+                                            <th class="px-4 py-3 text-right w-48 border-r border-emerald-500 min-w-[150px]">Nominal Pokok (Rp)</th>
+                                            <th class="px-3 py-3 text-center w-28 min-w-[100px]">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody id="membersContainer" class="bg-white divide-y divide-slate-300"></tbody>
@@ -333,7 +332,7 @@
                     </div>
 
                     <div class="mt-6 bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                        <div class="flex justify-between items-center">
+                        <div class="flex justify-between items-center flex-wrap gap-2">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide">Lampiran Dokumen Pengajuan (PDF / Foto)</label>
                                 <p class="text-[11px] text-slate-500">Formulir pengajuan dari anggota/karyawan yang sudah disetujui & ditandatangani ketua koperasi</p>
@@ -440,11 +439,10 @@
                     </div>
                 </div>
 
-                <!-- Distinct high-visibility scroll wrapper for tables -->
-                <div class="overflow-x-auto border-4 border-blue-500 rounded-xl shadow-lg bg-amber-50/20 p-2">
-                    <div class="mb-2 text-[11px] font-bold text-blue-700 flex items-center gap-1.5 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-200">
-                        <i class="fa-solid fa-arrows-left-right text-sm animate-pulse"></i> 
-                        <span>Geser tabel ke kiri / kanan untuk melihat kolom lainnya secara lengkap</span>
+                <div class="overflow-x-auto border-4 border-indigo-600 rounded-xl shadow-xl bg-indigo-50/30 p-2.5">
+                    <div class="mb-2 text-xs font-bold text-indigo-900 flex items-center justify-between bg-indigo-100 px-3.5 py-2 rounded-lg border border-indigo-300">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-arrows-left-right text-indigo-700 text-sm animate-pulse"></i> Geser horizontal untuk melihat kolom laporan lainnya secara lengkap</span>
+                        <span class="text-[11px] bg-indigo-600 text-white px-2.5 py-1 rounded-md font-mono font-bold shadow-xs">Scroll Bar Aktif</span>
                     </div>
                     <table class="min-w-full divide-y-2 divide-slate-300 text-xs table-fixed bg-white">
                         <colgroup>
@@ -454,7 +452,7 @@
                             <col style="width: 180px;">
                             <col style="width: 100px;">
                             <col style="width: 90px;">
-                            <!-- Kolom MITRA lebar diset tepat 180px, no-wrap, rata kiri -->
+                            <!-- Kolom MITRA lebar tepat 180px, no-wrap, rata kiri -->
                             <col style="width: 180px;">
                             <col style="width: 150px;">
                             <col style="width: 110px;">
